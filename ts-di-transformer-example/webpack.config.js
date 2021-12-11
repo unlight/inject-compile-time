@@ -13,7 +13,9 @@ module.exports = {
 
   // Set target to `node` as this is being run in a Node environment.
   target: 'node',
-  externals: [nodeExternals()],
+  externals: [nodeExternals({
+    additionalModuleDirs: ['../node_modules']
+  })],
   mode: 'development',
 
   // Currently we need to add '.ts' to the resolve.extensions array.
