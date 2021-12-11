@@ -11,11 +11,12 @@
 npx tsc --noEmit --watch
 npm install
 # npm run start
-npm run build && node dist/main.js
-npx webpack
+npm run build
+npx webpack && node dist/main.js
 ```
 
-## https://github.com/wessberg/DI
+## https://github.com/wessberg/di-compiler
 ```sh
 npx webpack
+npx webpack && node dist/bundle.js
 ```
