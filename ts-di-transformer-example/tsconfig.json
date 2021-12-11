@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": false,
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "target": "es6",
+    "lib": ["esnext"],
+    "sourceMap": false,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "outDir": "./dist",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+
+    "strict": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}
