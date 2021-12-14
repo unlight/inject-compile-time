@@ -15,19 +15,23 @@ class App {
     }
 }
 
-bootstrap.resolve(app_1.App, [Symbol.for("ITodoService#0978228aaa42ef84957335a179a6d615a6ef31a5501e613bc4a8aa16a2febbdd")]);
+bootstrap.resolve(app_1.App, [Symbol.for("ITodoService#0978228a")]);
 ```
 
 ### Pros/cons
+[-] Do not enable `transpileOnly` - will not work
 [+] Maybe better for NestJS
 ```ts
-providers: [
-    { provide: InterfaceSymbol<ITodoService>(), useClass: class Todo implements ITodoService { } },
-]
-
-class App {
-	constructor(@Inject(InterfaceSymbol<ITodoService>()) private todo: ITodoService) {}
-}
+@Module({
+  imports: [],
+  controllers: [AppController],
+  providers: [
+    {
+      provide: InterfaceSymbol<ITodoService>(),
+      useClass: TodoService,
+    },
+  ],
+})
 ```
 
 
@@ -43,6 +47,11 @@ class App {
     }
     static get [Symbol.for("___CTOR_ARGS___")]() { return [`ITodoService`]; }
 }
+
+export class AppController {
+  constructor(@Inject(InterfaceSymbol<ITodoService>()) private readonly todoService: ITodoService) { }
+}
+
 ```
 
 ## Resouces

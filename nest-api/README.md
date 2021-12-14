@@ -1,3 +1,3 @@
 ```sh
-npx webpack
+npx webpack && node dist/bundle
 ```

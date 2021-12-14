@@ -1,16 +1,24 @@
-import { Container, InterfaceSymbol } from 'ts-di-transformer/api';
+import { Logger, NestApplicationOptions } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { AppController } from './app/app.controller';
 
-import { App } from './app';
+import { AppModule } from './app/app.module';
 
-import { IHttp } from './models/IHttp';
-import { Http } from './services/http';
-import { ITodoService } from './models/ITodoService';
-import { Todo } from './services/todo';
+export async function createApp(options?: NestApplicationOptions) {
+  const app = await NestFactory.create(AppModule, options);
+  app.setGlobalPrefix('api');
+  return app;
+}
 
-const bootstrap = new Container();
+async function bootstrap() {
+  const app = await createApp();
+  const firstTodo = await app.get(AppController).getFirstTodo();
+  console.log(firstTodo);
+  // const port = process.env.PORT || 3333;
+  // await app.listen(port);
+  // Logger.log(`Listening at ${await app.getUrl()}`, 'main');
+}
 
-bootstrap.bind(InterfaceSymbol<IHttp>(), Http);
-bootstrap.bind(InterfaceSymbol<ITodoService>(), Todo);
-
-bootstrap.resolve(App).run();
-
+if (process.env.NODE_ENV !== 'test') {
+  void bootstrap();
+}
