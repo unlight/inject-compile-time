@@ -19,8 +19,8 @@ bootstrap.resolve(app_1.App, [Symbol.for("ITodoService#0978228a")]);
 ```
 
 ### Pros/cons
-[-] Do not enable `transpileOnly` - will not work
-[+] Maybe better for NestJS
+[-] Do not enable `transpileOnly` - will not work  
+[+] Maybe better for NestJS  
 ```ts
 @Module({
   imports: [],
