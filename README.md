@@ -32,8 +32,10 @@ bootstrap.resolve(app_1.App, [Symbol.for("ITodoService#0978228a")]);
     },
   ],
 })
+export class AppController {
+  constructor(@Inject(InterfaceSymbol<ITodoService>()) private readonly todoService: ITodoService) { }
+}
 ```
-
 
 ## https://github.com/wessberg/di-compiler
 ```sh
@@ -47,11 +49,6 @@ class App {
     }
     static get [Symbol.for("___CTOR_ARGS___")]() { return [`ITodoService`]; }
 }
-
-export class AppController {
-  constructor(@Inject(InterfaceSymbol<ITodoService>()) private readonly todoService: ITodoService) { }
-}
-
 ```
 
 ## Resouces

@@ -34,6 +34,7 @@ module.exports = {
         use: [
           {
             options: {
+              // transpileOnly: true, // do not enable
               getCustomTransformers: program => ({
                 before: [
                   transformer(program)
