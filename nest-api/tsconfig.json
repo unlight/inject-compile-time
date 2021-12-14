@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2020",
+    "importHelpers": true,
+    "declaration": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "incremental": true,
+    "outDir": "./dist"
+  },
+  "include": ["src"]
+}

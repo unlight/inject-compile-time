@@ -8,10 +8,11 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
+    "@nestjs/common": "^8.2.3",
+    "@nestjs/core": "^8.2.3",
     "@types/request": "^2.48.7",
     "@wessberg/di": "^2.0.3",
     "@wessberg/di-compiler": "^2.2.6",
-    "awesome-typescript-loader": "^5.2.1",
     "ts-di-transformer": "^0.7.1",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.3",

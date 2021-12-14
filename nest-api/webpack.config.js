@@ -43,19 +43,7 @@ module.exports = {
             loader: 'ts-loader',
           },
         ],
-      },
-      // {
-      //   test: /\.tsx?$/,
-      //   loader: 'awesome-typescript-loader',
-      //   options: {
-      //     // ... other loader's options
-      //     getCustomTransformers: program => ({
-      //       before: [
-      //         transformer(program)
-      //       ]
-      //     })
-      //   }
-      // }
+      }
     ]
   }
 };
